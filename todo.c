@@ -7,11 +7,6 @@
 #include "item.h"
 #include "list.h"
 
-void on_add_item( GtkWidget * addbutton, gpointer data);
-void on_item_complete( GtkWidget * checkbutton, gpointer data);
-void add_new_task( struct todo_state * ts, char * description);
-struct todo_state* init_todo_state();
-
 gint QuitProg(GtkWidget *widget, gpointer gdata){
 
     gtk_main_quit();
@@ -62,13 +57,9 @@ int main( int argc, char ** argv){
   return( 0 );
 }
 
-//the gpointer needs to point to the todo_state
-void on_add_item( GtkWidget * addbutton, gpointer data){
-  
-}
 
-void add_new_task( struct todo_state * ts, char * description);
-struct todo_state* init_todo_state();
+
+
 
 
 

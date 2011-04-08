@@ -10,14 +10,14 @@ void todo_item_callback( GtkWidget * checkbutton, gpointer data){
 //initializes (allocates) a todo item with the description 
 todo_item_p todo_item_init(const char * desc ){
 
-  todo_item_p = (todo_item_p ) malloc( sizeof(struct todo_item) );
+  todo_item_p ti = (todo_item_p ) malloc( sizeof(struct todo_item) );
   //zero the struct
   memset(ti, 0, sizeof(struct todo_item));
   
   //malloc the string
 
   //get the checkbox struct
-  struct GtkCheckButton * checkbox = (struct GtkCheckButton *) gtk_check_button_new_with_label( (gchar *) desc ); 
+  GtkCheckButton * checkbox = (struct GtkCheckButton *) gtk_check_button_new_with_label( (gchar *) desc ); 
 
   ti->button = checkbox;
   
@@ -31,7 +31,7 @@ todo_item_p todo_item_init(const char * desc ){
 }
 
 //gets the checkbox from a todo_item
-GtkCheckButton * todo_item_get_checkbutton( todo_item_p ){
+GtkCheckButton * todo_item_get_checkbutton( todo_item_p ti ){
   return ti->button;
 }
 
@@ -39,14 +39,16 @@ GtkCheckButton * todo_item_get_checkbutton( todo_item_p ){
 todo_item_p todo_item_free(todo_item_p ti){
   
   gtk_widget_destroy( GTK_WIDGET( ti ) );
-  next_ti = ti->next;
+  todo_item_p next_ti = ti->next;
   free(ti);
   return next_ti;
+
 }
 
 //serializes a todo_item
-char * todo_item_serialize( todo_item_p ){
+char * todo_item_serialize( todo_item_p ti ){
   //gtk_button_get_label will be used here
+  return NULL;
 }
 
 //reads a todo item from serialized form
@@ -58,4 +60,4 @@ void todo_item_set_next( todo_item_p ti, todo_item_p nti){
   ti->next = nti;
 }
 
-#ENDIF
+

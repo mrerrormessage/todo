@@ -1,5 +1,4 @@
 #include "list.h"
-#include "item.h"
 
 //initializes a todo list
 todo_list_p todo_list_init(){
@@ -28,7 +27,7 @@ todo_list_p todo_list_read( todo_list_p tl){
 //adds a new item to the todo list
 void todo_list_add( todo_list_p tl, char * desc ){
 
-  ti = todo_item_init( desc );
+  todo_item_p ti = todo_item_init( desc );
 
   //add to the head of the list
   todo_item_set_next(ti, tl->head);
