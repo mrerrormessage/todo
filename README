@@ -1,0 +1,6 @@
+A simple "todo" app using GTK. 
+
+Runs without error on a stock amd64 ubuntu install. 
+
+To build, you need
+libgtk2.0-dev
