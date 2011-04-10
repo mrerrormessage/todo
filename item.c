@@ -35,6 +35,18 @@ GtkCheckButton * todo_item_get_checkbutton( todo_item_p ti ){
   return ti->button;
 }
 
+//adds the checkbox to the end of a GtkBox
+void todo_item_pack_end( todo_item_p ti, GtkBox * gb){
+  GtkCheckButton * cb = ti->button;
+  gtk_box_pack_end( gb, 
+		    GTK_WIDGET( cb ), 
+		    FALSE, 
+		    FALSE, 
+		    5 );
+  gtk_widget_show( GTK_WIDGET( cb ) );
+  return;
+}
+
 //frees a todo_item, returns the pointer to the next todo_item
 todo_item_p todo_item_free(todo_item_p ti){
   

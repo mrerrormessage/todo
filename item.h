@@ -25,6 +25,9 @@ todo_item_p todo_item_free(todo_item_p);
 //gets the checkbox from a todo_item
 GtkCheckButton * todo_item_get_checkbutton( todo_item_p );
 
+//adds the checkbox to the end of a GtkBox
+void todo_item_pack_end( todo_item_p , GtkBox * );
+
 //serializes a todo_item
 char * todo_item_serialize( todo_item_p );
 
