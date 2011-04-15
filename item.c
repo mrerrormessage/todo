@@ -17,7 +17,7 @@ todo_item_p todo_item_init(const char * desc ){
   //malloc the string
 
   //get the checkbox struct
-  GtkCheckButton * checkbox = (struct GtkCheckButton *) gtk_check_button_new_with_label( (gchar *) desc ); 
+  GtkCheckButton * checkbox = (GtkCheckButton *) gtk_check_button_new_with_label( (gchar *) desc ); 
 
   ti->button = checkbox;
   
