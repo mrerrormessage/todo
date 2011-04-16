@@ -38,16 +38,17 @@ void AddRealNewItem( GtkWidget * addbutton, gpointer data){
   todo_item_p ti = todo_item_init( description );
   todo_item_pack_end( ti, ai->box );
   //probably need to free description
+  //then clear the entry_buffer
 }
 
-/* Data is the vbox that the new item needs to be created in */
+/* Data is the vbox that the new item needs to be created in 
 void AddNewItem( GtkWidget *addbutton, gpointer data){
   
   GtkBox * gb = (GtkBox *) data;
   todo_item_p ti = todo_item_init( "hello world!");
   todo_item_pack_end( ti, gb );
 
-}
+  } */
 
 int main( int argc, char ** argv){
 
@@ -64,7 +65,7 @@ int main( int argc, char ** argv){
   gtk_init( &argc, &argv);
   builder = gtk_builder_new();
 
-  if( ! gtk_builder_add_from_file(builder, "todo2.glade", &error) ){
+  if( ! gtk_builder_add_from_file(builder, "todo.gtkb", &error) ){
     g_warning( "%s", error->message);
     g_free( error );
     return(1);
